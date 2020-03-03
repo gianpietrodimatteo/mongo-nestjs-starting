@@ -2,9 +2,13 @@ import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/
 import { CreateCatDto } from './dto/create-cat.dto';
 import { ListAllEntities } from './dto/list-all-entities';
 import { UpdateCatDto } from './dto/create-cat.dto copy';
+import { CatsService } from './cats.service';
 
 @Controller('cats')
 export class CatsController {
+
+  constructor(private readonly catsService: CatsService) {}
+
   @Post()
   create(@Body() createCatDto: CreateCatDto) {
     return 'This action adds a new cat';
