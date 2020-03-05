@@ -1,8 +1,8 @@
 import { Controller, Get, Header, HttpCode, Param, Post, Query, Redirect } from '@nestjs/common';
 import { Observable, of } from 'rxjs';
 
-@Controller('shared')
-export class SharedController {
+@Controller('common')
+export class CommonController {
     @Post()
     // the response status code is always 200 by default, except for POST requests which are 201.
     @HttpCode(204)
@@ -39,4 +39,3 @@ export class SharedController {
         return `This action returns a #${params.id} of shared`;
     }
 }
-

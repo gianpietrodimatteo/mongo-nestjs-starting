@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SharedController } from './shared.controller';
+import { CommonController } from './common.controller';
 
-describe('Shared Controller', () => {
-  let controller: SharedController;
+describe('Common Controller', () => {
+  let controller: CommonController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [SharedController],
+      controllers: [CommonController],
     }).compile();
 
-    controller = module.get<SharedController>(SharedController);
+    controller = module.get<CommonController>(CommonController);
   });
 
   it('should be defined', () => {
