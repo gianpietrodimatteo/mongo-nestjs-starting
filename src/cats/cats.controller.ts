@@ -11,12 +11,14 @@ export class CatsController {
 
   @Post()
   create(@Body() createCatDto: CreateCatDto) {
-    return 'This action adds a new cat';
+    // return 'This action adds a new cat';
+    return this.catsService.create(createCatDto);
   }
 
   @Get()
-  findAll(@Query() query: ListAllEntities) {
-    return `This action returns all cats (limit: ${query.limit} items)`;
+  findAll() {
+    // return `This action returns all cats (limit: ${query.limit} items)`;
+    return this.catsService.findAll();
   }
 
   @Get(':id')

@@ -8,11 +8,12 @@ import { LoggerMiddleware } from './logger.middleware';
 import { CatsController } from './cats/cats.controller';
 // import { DatabaseModule } from './database/database.module';
 // import { User } from './users/entities/user.entity';
+import { MongooseModule } from '@nestjs/mongoose';
 
 
 @Module({
   // imports: [CatsModule, CommonModule, DatabaseModule.forRoot([User])],
-  imports: [CatsModule, CommonModule],
+  imports: [CatsModule, CommonModule, MongooseModule.forRoot('mongodb://localhost/nest')],
   // exports: [CommonModule, DatabaseModule],
   exports: [CommonModule],
   controllers: [AppController],
